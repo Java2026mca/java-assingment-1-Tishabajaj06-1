@@ -5,39 +5,45 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        // Upper part
+        // upper half
         for (int i = 1; i <= n; i++) {
 
-            // spaces before
-            for (int j = 1; j <= n - i; j++) {
+            // leading spaces
+            for (int j = i; j < n; j++) {
                 System.out.print(" ");
             }
 
-            // hollow stars
-            for (int j = 1; j <= 2 * i - 1; j++) {
-                if (j == 1 || j == 2 * i - 1) {
-                    System.out.print("*");
-                } else {
+            // first star
+            System.out.print("*");
+
+            // hollow middle + second star
+            if (i > 1) {
+                for (int j = 1; j <= 2*i - 3; j++) {
                     System.out.print(" ");
                 }
+                System.out.print("*");
             }
 
             System.out.println();
         }
 
-        // Lower part
+        // lower half
         for (int i = n - 1; i >= 1; i--) {
 
-            for (int j = 1; j <= n - i; j++) {
+            // leading spaces
+            for (int j = i; j < n; j++) {
                 System.out.print(" ");
             }
 
-            for (int j = 1; j <= 2 * i - 1; j++) {
-                if (j == 1 || j == 2 * i - 1) {
-                    System.out.print("*");
-                } else {
+            // first star
+            System.out.print("*");
+
+            // hollow middle + second star
+            if (i > 1) {
+                for (int j = 1; j <= 2*i - 3; j++) {
                     System.out.print(" ");
                 }
+                System.out.print("*");
             }
 
             System.out.println();
