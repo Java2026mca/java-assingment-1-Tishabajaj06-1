@@ -4,17 +4,48 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
 
-        // TODO: Fill an N×N matrix in clockwise spiral order starting from 1
-        //       Print each row with values separated by single space
-        //       Then print: "Diagonal: X" where X = sum of primary diagonal (top-left to bottom-right)
-        //
-        // Input: 3
-        // Output:
-        // 1 2 3
-        // 8 9 4
-        // 7 6 5
-        // Diagonal: 15
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
 
+            // first star
+            System.out.print("*");
+
+            // hollow middle + second star
+            if (i > 1) {
+                for (int j = 1; j <= 2*i - 3; j++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
+        // lower half
+        for (int i = n - 1; i >= 1; i--) {
+
+            // leading spaces
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+
+            // first star
+            System.out.print("*");
+
+            // hollow middle + second star
+            if (i > 1) {
+                for (int j = 1; j <= 2*i - 3; j++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+}
     }
 }
